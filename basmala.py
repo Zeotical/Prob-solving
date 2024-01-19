@@ -23,7 +23,7 @@ board= [
     ["-", "-","-"]
 ]
 
-
+user= True # when true it refers t x, otherwise o
 
 def print_board(board):
     for row in board:
@@ -73,9 +73,13 @@ def coordinates(user_input):
 def add_to_board(coords,board):
     row = coords[0]
     col= coords[1]
-    board[row][col]="x"
+    board[row][col]= active_user
 
+def current_user(user):
+    if user: return"x"
+    else: return "o"
 while True:
+    active_user = current_user(user)
     print_board(board)
     user_input=input("Please enter a position 1 through 9 or enter \"q\" to quit: ")
     if quit(user_input): break
@@ -86,7 +90,10 @@ while True:
     coords = coordinates(user_input)
     if istaken(coords, board):
         print("Please try again.")
+        continue
     add_to_board(coords,board)
+    user = not user
+
 # input= input("enter: ")
 # def ha(input):
 #     if input=="yes":
