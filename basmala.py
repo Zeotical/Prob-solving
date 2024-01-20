@@ -78,7 +78,40 @@ def add_to_board(coords,board):
 def current_user(user):
     if user: return"x"
     else: return "o"
-while True:
+
+def iswin(user, board):
+    if check_row(user, board): return True
+    if check_col(user, board): return True  
+    if check_diag(user,board): return True 
+
+def check_row(user, board):
+    for row in board:
+        complete_row = True
+        for slot in row:
+            if slot != user:
+                   complete_row = False
+                   break
+        if complete_row: return True
+    return False
+
+def check_col(user,board):
+    for col in range(3):
+        complete_col= True
+        for row in range(3):
+            if board[row][col] != user:
+                complete_col= False
+                break
+        if complete_col: return True
+    return False     
+
+def check_diag(user, board):
+    #top left to bottom right
+    if board[0][0]== user and board[1][1]==user and board [2][2]==user: return True
+    elif board[0][2]== user and board[1][1] ==user and board [2][0]==user: return True
+    else: return False
+
+turns= 0
+while turns<9 :
     active_user = current_user(user)
     print_board(board)
     user_input=input("Please enter a position 1 through 9 or enter \"q\" to quit: ")
@@ -92,6 +125,18 @@ while True:
         print("Please try again.")
         continue
     add_to_board(coords,board)
+    if iswin(active_user,board):
+        print()
+        print_board(board)
+        print()
+        print(f"{active_user.upper()} won!")
+        break
+    turns +=1
+    if turns==9 :
+        print()
+        print_board(board)
+        print()
+        print("It's a draw!")
     user = not user
 
 # input= input("enter: ")
