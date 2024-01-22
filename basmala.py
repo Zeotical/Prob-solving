@@ -23,6 +23,23 @@
 #     ["-", "-","-"]
 # ]
 
+
+import random
+
+x= input("do you want to play against another player or the computer? ")
+gridsize=input("enter gridsize from small medium big: ")
+
+def computer(gridsize) -> int:
+   if gridsize== "small":
+      user_input= random.randint(1,9)
+      return user_input
+   elif gridsize== "medium":
+      user_input= random.randint(1,16)
+      return user_input
+   elif gridsize=="big":
+      user_input= random.randint(1,25)
+      return user_input
+
 user= True # when true it refers to x, otherwise o
 
 def print_board(board):
@@ -314,7 +331,11 @@ turns=0
 while turns<25:
    print_board(board5)
    active_user= current_user(user)
-   user_input=input("Please enter a position 1 through 25 or press \"q\" to quit: ")
+   if x=="computer" and user== False:
+      user_input= str(computer(gridsize))
+      print(user_input)
+   else:
+      user_input=input("Please enter a position 1 through 25 or press \"q\" to quit: ") 
    if quit(user_input): break
    if not check_input5(user_input):
       print("Please try again.")
