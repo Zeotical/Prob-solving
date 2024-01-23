@@ -24,7 +24,7 @@
 # ]
 
 
-import random
+import random, os
 
 x= input("do you want to play against another player or the computer? ")
 gridsize=input("enter gridsize from small medium big: ")
@@ -39,6 +39,12 @@ def computer(gridsize) -> int:
    elif gridsize=="big":
       user_input= random.randint(1,25)
       return user_input
+
+def startagain(user_input):
+   if user_input=="s":
+    os.system("clear")
+   return True
+   
 
 user= True # when true it refers to x, otherwise o
 
@@ -337,6 +343,7 @@ while turns<25:
    else:
       user_input=input("Please enter a position 1 through 25 or press \"q\" to quit: ") 
    if quit(user_input): break
+   if startagain(user_input):continue
    if not check_input5(user_input):
       print("Please try again.")
       continue
