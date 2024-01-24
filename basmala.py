@@ -3,7 +3,7 @@
 #     #Enclosed in triple quotes, either single or double, and are placed immediately after the definition of the module, class, function, or method.
 #     #can span multiple lines and be used to describe the purpose of the code, its inputs, outputs, and any relevant information
 # tic tac toe board
-# [cat
+# [
 #     [-,-, -],
 #     [-,-, -],
 #     [-,-, -]
