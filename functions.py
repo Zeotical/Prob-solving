@@ -49,6 +49,12 @@ def computer(gridsize):
       return user_input
 
 
+def startagain(user_input):
+   if user_input=="s":
+    os.system('cls') #tried using clear but apparantly windows only supports this? absoulte loss.
+    return True
+   else: return False  
+
 #Functions I had to make multiple different versions of
 
 def check_input(user_input):
