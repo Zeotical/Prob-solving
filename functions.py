@@ -57,14 +57,20 @@ def startagain(user_input):
 
 #Functions I had to make multiple different versions of
 
-def check_input(user_input):
+def check_input(user_input,gridsize):
      #chech if it's a number
      if not isnum(user_input): return False
      user_input = int(user_input)
      #check if it's 1-9
-     if not bounds(user_input):return False
-     return True
-
+     if gridsize=="small":
+      if not bounds(user_input):return False
+      return True
+     elif gridsize=="medium":
+        if not bounds4(user_input): return False
+        return True
+     elif gridsize=="big":
+        if not bounds5(user_input):return False
+        return True
 def bounds (user_input):
     if user_input>9 or user_input <1:
         print("This number is out of bounds")
@@ -107,13 +113,6 @@ def iswin(user, board):
     if check_row(user, board): return True
     if check_col(user, board): return True  
     if check_diag(user,board): return True 
-
-
-def check_input4(user_input):
-    if not isnum(user_input): return False
-    user_input= int(user_input)
-    if not bounds4(user_input):return False
-    return True     
 
 def bounds4(user_input):
     if user_input<1 or user_input>16:
@@ -162,11 +161,6 @@ def check_diag4(user,board4):
       return True
    else: return False   
 
-def  check_input5(user_input):
-   if not isnum(user_input): return False
-   user_input= int(user_input)
-   if not bounds5(user_input): return False
-   return True
 
 def bounds5(user_input):
    if user_input<1 or user_input>25:

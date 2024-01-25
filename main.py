@@ -54,9 +54,9 @@ while turns<9 :
       user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ") 
     if fun.startagain(user_input):continue
     if fun.quit(user_input): break
-    if not fun.check_input(user_input):
-        print("Please try again.")
-        continue
+    if not fun.check_input(user_input,gridsize):
+      print("Please try again.")
+      continue
     user_input= int(user_input) - 1
     active_user = fun.current_user(user)
     coords = fun.coordinates(user_input)
@@ -118,9 +118,9 @@ while turns<16:
       user_input=input("Please enter a position 1 through 16 or press \"q\" to quit: ") 
     if fun.startagain(user_input):continue
     if fun.quit(user_input): break
-    if not fun.check_input4(user_input):
-        print("Please try again.")
-        continue
+    if not fun.check_input(user_input,gridsize):
+      print("Please try again.")
+      continue
     user_input= int(user_input)-1
     coords= fun.coordinates4(user_input)
     if fun.istaken(coords,board4): 
@@ -184,7 +184,7 @@ while turns<25:
       user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ")   
    if fun.startagain(user_input):continue
    if fun.quit(user_input): break
-   if not fun.check_input5(user_input):
+   if not fun.check_input(user_input,gridsize):
       print("Please try again.")
       continue
    user_input= int(user_input)-1
