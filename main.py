@@ -17,7 +17,7 @@
 # toggle between users upon succesful moves
 # """
 
-import functions  as fun
+import os, functions  as fun
 
 board= [
     ["-", "-","-"],
@@ -25,7 +25,6 @@ board= [
     ["-", "-","-"]
 ]
 
-import  os
 
 user_input="a"
 choice= input("Do you want to play against another player or the computer? ").lower()
@@ -55,8 +54,8 @@ while turns<9 :
     if fun.startagain(user_input):continue
     if fun.quit(user_input): break
     if not fun.check_input(user_input,gridsize):
-      print("Please try again.")
-      continue
+        print("Please try again.")
+        continue
     user_input= int(user_input) - 1
     active_user = fun.current_user(user)
     coords = fun.coordinates(user_input)

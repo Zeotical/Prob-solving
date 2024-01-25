@@ -64,27 +64,29 @@ def check_input(user_input,gridsize):
      #check if it's 1-9
      if gridsize=="small":
       if not bounds(user_input,gridsize):return False
-      return True
+      else:return True
      elif gridsize=="medium":
-        if not bounds(user_input,gridsize): return False
-        return True
+      if not bounds(user_input,gridsize): return False
+      else:return True
      elif gridsize=="big":
-        if not bounds(user_input,gridsize):return False
-        return True
+      if not bounds(user_input,gridsize):return False
+      else:return True
 def bounds (user_input,gridsize):
     if gridsize=="small": 
       if user_input>9 or user_input <1:
          print("This number is out of bounds")
          return False
+      else: return True
     elif gridsize=="medium":
       if user_input<1 or user_input>16:
          print("This number is out of bounds")
          return False
+      else: return True
     elif gridsize=="big":
       if user_input<1 or user_input>25:
           print("This number is out of bounds.")
           return False
-    else: return True
+      else: return True
 
 def coordinates(user_input):
      row = int(user_input/3)

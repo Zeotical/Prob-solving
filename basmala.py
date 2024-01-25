@@ -238,6 +238,10 @@ board= [
 ]
 
 import  os
+score=0
+def highscore(active_user):
+   score+=150
+   print(f"{active_user} your score is {score}")
 
 user_input="a"
 choice= input("Do you want to play against another player or the computer? ").lower()
@@ -245,20 +249,20 @@ gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
 user= True # when true it refers to x, otherwise o
 
-def check_input(user_input):
-     #chech if it's a number
-     if not fun.isnum(user_input): return False
-     user_input = int(user_input)
-     #check if it's 1-9
-     if gridsize=="small":
-      if not fun.bounds(user_input):return False
-      return True
-     elif gridsize=="medium":
-        if not fun.bounds4(user_input): return False
-        return True
-     elif gridsize=="big":
-        if not fun.bounds4(user_input):return False
-        return True
+# def check_input(user_input):
+#      #chech if it's a number
+#      if not fun.isnum(user_input): return False
+#      user_input = int(user_input)
+#      #check if it's 1-9
+#      if gridsize=="small":
+#       if not fun.bounds(user_input):return False
+#       return True
+#      elif gridsize=="medium":
+#         if not fun.bounds4(user_input): return False
+#         return True
+#      elif gridsize=="big":
+#         if not fun.bounds4(user_input):return False
+#         return True
 turns= 0
 while turns<9 :
     if user_input !="s":
@@ -266,7 +270,6 @@ while turns<9 :
     elif user_input=="s":
      os.system("cls")
      print("New start")
-    
      board= [
     ["-", "-","-"],
     ["-", "-","-"],
@@ -305,6 +308,7 @@ while turns<9 :
         fun.print_board(board)
         print()
         print(f"{active_user.upper()} won!")
+        highscore(active_user)
         break
     turns +=1
     if turns==9 :
