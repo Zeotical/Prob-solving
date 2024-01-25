@@ -63,13 +63,13 @@ def check_input(user_input,gridsize):
      user_input = int(user_input)
      #check if it's 1-9
      if gridsize=="small":
-      if not bounds(user_input):return False
+      if not bounds(user_input,gridsize):return False
       return True
      elif gridsize=="medium":
-        if not bounds(user_input): return False
+        if not bounds(user_input,gridsize): return False
         return True
      elif gridsize=="big":
-        if not bounds(user_input):return False
+        if not bounds(user_input,gridsize):return False
         return True
 def bounds (user_input,gridsize):
     if gridsize=="small": 
