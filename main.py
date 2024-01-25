@@ -35,17 +35,13 @@ user= True # when true it refers to x, otherwise o
 
 turns= 0
 while turns<9 :
-    if user_input !="s":
-     fun.print_board(board) 
-    elif user_input=="s":
-     os.system("cls")
-     print("New start")
-    
-     board= [
+    if user_input=="s":
+        turns=0
+        board= [         #added board since it used to take the previous games' input
     ["-", "-","-"],
     ["-", "-","-"],
     ["-", "-","-"]]
-     fun.print_board(board) 
+        fun.startagain(user_input,gridsize)
     if choice=="computer" and user== False:
       user_input= str(fun.computer(gridsize))
       print(f"The computer enters: {user_input}")
@@ -98,24 +94,20 @@ board4= [
 turns=0
 while turns<16:
     active_user= fun.current_user(user)
-    if user_input !="s":
-     fun.print_board(board4) 
-    elif user_input=="s":
-      os.system("cls")
-      print("New start")
-      board4= [
+    if user_input=="s":
+        turns=0
+        board4= [
     ["-","-","-","-"],
     ["-","-","-","-"],
     ["-","-","-","-"],
-    ["-","-","-","-"]
-]
-      fun.print_board(board4)  
+    ["-","-","-","-"]]
+        fun.startagain(user_input,gridsize)
     if choice=="computer" and user== False:
       user_input= str(fun.computer(gridsize))
       print(f"The computer enters: {user_input}")
     else:
+      fun.print_board(board4)
       user_input=input("Please enter a position 1 through 16 or press \"q\" to quit: ") 
-    if fun.startagain(user_input):continue
     if fun.quit(user_input): break
     if not fun.check_input(user_input,gridsize):
       print("Please try again.")
@@ -164,18 +156,15 @@ board5=[
 turns=0
 while turns<25:
    active_user= fun.current_user(user) 
-   if user_input !="s":
-    fun.print_board(board5) 
-   elif user_input=="s":
-      os.system("cls")
-      print("New start")
-      board5=[
+   if user_input=="s":
+        turns=0
+        board5=[             #added board since it used to take the previous games' input
+   ["-","-","-","-","-"], 
    ["-","-","-","-","-"],
    ["-","-","-","-","-"],
    ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"] ]
-      fun.print_board(board5)
+   ["-","-","-","-","-"] ]         
+        fun.startagain(user_input,gridsize)
    if choice=="computer" and user== False:
       user_input= str(fun.computer(gridsize))
       print(f"The computer enters: {user_input}")

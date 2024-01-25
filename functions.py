@@ -37,26 +37,6 @@ def istaken(coords,board):
     return True
  else: return False 
 
-def computer(gridsize):
-   if gridsize== "small":
-      user_input= random.randint(1,9)
-      return user_input
-   elif gridsize== "medium":
-      user_input= random.randint(1,16)
-      return user_input
-   elif gridsize=="big":
-      user_input= random.randint(1,25)
-      return user_input
-
-
-def startagain(user_input):
-   if user_input=="s":
-    os.system('cls') #tried using clear but apparantly windows only supports this? absoulte loss.
-    return True
-   else: return False  
-
-#Functions I had to make multiple different versions of
-
 def check_input(user_input,gridsize):
      #chech if it's a number
      if not isnum(user_input): return False
@@ -71,6 +51,8 @@ def check_input(user_input,gridsize):
      elif gridsize=="big":
       if not bounds(user_input,gridsize):return False
       else:return True
+
+
 def bounds (user_input,gridsize):
     if gridsize=="small": 
       if user_input>9 or user_input <1:
@@ -87,6 +69,30 @@ def bounds (user_input,gridsize):
           print("This number is out of bounds.")
           return False
       else: return True
+
+def computer(gridsize):
+   if gridsize== "small":
+      user_input= random.randint(1,9)
+      return user_input
+   elif gridsize== "medium":
+      user_input= random.randint(1,16)
+      return user_input
+   elif gridsize=="big":
+      user_input= random.randint(1,25)
+      return user_input
+
+
+def startagain(user_input,gridsize):
+   if user_input=="s" and gridsize=="small":
+     os.system("cls")
+     print("New start")
+   elif user_input=="s" and gridsize=="medium":
+     os.system("cls")
+     print("New start")
+   elif user_input=="s" and gridsize=="big":
+     os.system("cls")
+     print("New start")
+#Functions I had to make multiple different versions of
 
 def coordinates(user_input):
      row = int(user_input/3)
