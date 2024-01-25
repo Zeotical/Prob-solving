@@ -66,15 +66,24 @@ def check_input(user_input,gridsize):
       if not bounds(user_input):return False
       return True
      elif gridsize=="medium":
-        if not bounds4(user_input): return False
+        if not bounds(user_input): return False
         return True
      elif gridsize=="big":
-        if not bounds5(user_input):return False
+        if not bounds(user_input):return False
         return True
-def bounds (user_input):
-    if user_input>9 or user_input <1:
-        print("This number is out of bounds")
-        return False
+def bounds (user_input,gridsize):
+    if gridsize=="small": 
+      if user_input>9 or user_input <1:
+         print("This number is out of bounds")
+         return False
+    elif gridsize=="medium":
+      if user_input<1 or user_input>16:
+         print("This number is out of bounds")
+         return False
+    elif gridsize=="big":
+      if user_input<1 or user_input>25:
+          print("This number is out of bounds.")
+          return False
     else: return True
 
 def coordinates(user_input):
@@ -113,12 +122,6 @@ def iswin(user, board):
     if check_row(user, board): return True
     if check_col(user, board): return True  
     if check_diag(user,board): return True 
-
-def bounds4(user_input):
-    if user_input<1 or user_input>16:
-        print("This number is out of bounds")
-        return False
-    else: return True
 
 def coordinates4(user_input):
     row= int(user_input/4)
@@ -160,13 +163,6 @@ def check_diag4(user,board4):
         board4[2][1]== user and board4[3][0]==user:
       return True
    else: return False   
-
-
-def bounds5(user_input):
-   if user_input<1 or user_input>25:
-      print("This number is out of bounds.")
-      return False
-   else: return True
 
 def coordinates5(user_input):
    row = int(user_input/5)
