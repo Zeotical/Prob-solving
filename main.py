@@ -1,11 +1,11 @@
 # *********************************************************
-# Program: YOUR_FILENAME.py
+# Program: main.py
 # Course: PSP0101 PROBLEM SOLVING AND PROGRAM DESIGN
 # Class: TL11-09
 # Year: 2023/24 Trimester 1
-# Names: MEMBER_NAME_1 | MEMBER_NAME_2 | NURUL HAIFA ALIAH BINTI MOHD YAZID
-# IDs: MEMBER_ID_1 | MEMBER_ID_2 | 1231102000
-# Emails: MEMBER_EMAIL_1 | MEMBER_EMAIL_2 | 1231102000@STUDENT.MMU.EDU.MY
+# Names: Basmala Mohammed Ali Elimam | MEMBER_NAME_2 | NURUL HAIFA ALIAH BINTI MOHD YAZID
+# IDs: 1231102801 | MEMBER_ID_2 | 1231102000
+# Emails: 1231102801@student.mmu.edu.my | MEMBER_EMAIL_2 | 1231102000@STUDENT.MMU.EDU.MY
 # Phones: MEMBER_PHONE_1 | MEMBER_PHONE_2 | 012-721-1586
 # *********************************************************
 
@@ -81,12 +81,7 @@ if gridsize=="1":
              turns=0
              fun.startagain(user_input,gridsize)
              choice= input("Do you want to play against another player or the computer? ").lower()
-             print("Choose a grid size!")
-             print("1. small (3x3)")
-             print("2. medium (4x4)")
-             print("3. big (5x5)")
-             user_input=="#"
-             gridsize= input("Enter your choice (1, 2, or 3): ")
+             gridsize="1"
              fun.tic_tac_toe(gridsize)
              if choice=="computer":
                 username1 = input("Player 1 Enter your username:" )
@@ -157,7 +152,6 @@ if gridsize=="2":
              turns=0
              fun.startagain(user_input,gridsize)
              choice= input("Do you want to play against another player or the computer? ").lower()
-             
              gridsize="2"
              fun.tic_tac_toe(gridsize)
              if choice=="computer":
@@ -213,7 +207,7 @@ if gridsize=="2":
             print()
             print("It's a draw!")
             user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
-        if fun.quit(user_input): break
+            if fun.quit(user_input): break
         user = not user
     
   
