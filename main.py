@@ -51,8 +51,6 @@ board= [
 
 
 user_input="#"
-choice= input("Do you want to play against another player or the computer? ").lower()
->>>>>>> 5699296d20516be070d8bd2a62d75dcb702e55b7
 gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
 user= True # when true it refers to x, otherwise o
@@ -88,8 +86,13 @@ while True :
         print()
         fun.print_board(board)
         print()
-        print(f"{active_user.upper()} won!")
-        user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
+    if user and fun.iswin(active_user,board):
+          user=username1 
+          print(f"{username1} won!")
+    elif user=="False" and fun.iswin(active_user,board):
+         user=username2
+         print(f"{username2} won!")
+         user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
     if fun.quit(user_input): break
     turns +=1
     if turns==9 :
@@ -135,12 +138,13 @@ while turns<16:
         print("Please try again.")
         continue
     fun.add_to_board(coords,board4,active_user)
-    if fun.iswin4(active_user,board4):
-       print()
-       fun.print_board(board4)
-       print()
-       print(f"{active_user} won!")
-       user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
+    if user and fun.iswin(active_user,board4):
+          user=username1 
+          print(f"{username1} won!")
+    elif user=="False" and fun.iswin(active_user,board4):
+         user=username2
+         print(f"{username2} won!")
+         user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
     if fun.quit(user_input): break 
     turns+=1
     if turns==16:
@@ -190,12 +194,13 @@ while turns<25:
       print("Please try again.")
       continue
    fun.add_to_board(coords,board5,active_user)
-   if fun.iswin5(active_user,board5):
-      print()
-      fun.print_board(board5)
-      print()
-      print(f"{active_user} won!")
-      user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
+   if user and fun.iswin(active_user,board5):
+          user=username1 
+          print(f"{username1} won!")
+   elif user=="False" and fun.iswin(active_user,board4):
+         user=username2
+         print(f"{username2} won!")
+         user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
    if fun.quit(user_input): break
    turns+=1
    if turns==25:
