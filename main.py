@@ -26,7 +26,7 @@ board= [
 ]
 
 
-user_input="a"
+user_input="#"
 choice= input("Do you want to play against another player or the computer? ").lower()
 gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
@@ -34,7 +34,7 @@ user= True # when true it refers to x, otherwise o
 
 
 turns= 0
-while turns<9 :
+while True :
     if user_input=="s":
         turns=0
         board= [         #added board since it used to take the previous games' input
@@ -46,8 +46,8 @@ while turns<9 :
       user_input= str(fun.computer(gridsize))
       print(f"The computer enters: {user_input}")
     else:
+      fun.print_board(board)
       user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ") 
-    if fun.startagain(user_input):continue
     if fun.quit(user_input): break
     if not fun.check_input(user_input,gridsize):
         print("Please try again.")
@@ -64,13 +64,16 @@ while turns<9 :
         fun.print_board(board)
         print()
         print(f"{active_user.upper()} won!")
-        break
+        user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
+    if fun.quit(user_input): break
     turns +=1
     if turns==9 :
         print()
         fun.print_board(board)
         print()
         print("It's a draw!")
+        user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
+    if fun.quit(user_input): break
     user = not user
 
 """
@@ -123,14 +126,16 @@ while turns<16:
        fun.print_board(board4)
        print()
        print(f"{active_user} won!")
-       break
+       user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
+    if fun.quit(user_input): break 
     turns+=1
     if turns==16:
      print()
      fun.print_board(board4)
      print()
      print("It's a draw!")
-     break
+     user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
+    if fun.quit(user_input): break 
     user=not user
     
 """
