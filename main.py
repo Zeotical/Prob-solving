@@ -51,7 +51,6 @@ board= [
 
 
 user_input="#"
-gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
 user= True # when true it refers to x, otherwise o
 
@@ -112,7 +111,7 @@ board4= [
 ]
 
 turns=0
-while turns<16:
+while True:
     active_user= fun.current_user(user)
     if user_input=="s":
         turns=0
@@ -167,7 +166,7 @@ board5=[
 ]
 
 turns=0
-while turns<25:
+while True:
    active_user= fun.current_user(user) 
    if user_input=="s":
         turns=0

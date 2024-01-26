@@ -42,29 +42,29 @@ def check_input(user_input,gridsize):
      if not isnum(user_input): return False
      user_input = int(user_input)
      #check if it's 1-9
-     if gridsize=="small":
+     if gridsize=="1":
       if not bounds(user_input,gridsize):return False
       else:return True
-     elif gridsize=="medium":
+     elif gridsize=="2":
       if not bounds(user_input,gridsize): return False
       else:return True
-     elif gridsize=="big":
+     elif gridsize=="3":
       if not bounds(user_input,gridsize):return False
       else:return True
 
 
 def bounds (user_input,gridsize):
-    if gridsize=="small": 
+    if gridsize=="1": 
       if user_input>9 or user_input <1:
          print("This number is out of bounds")
          return False
       else: return True
-    elif gridsize=="medium":
+    elif gridsize=="2":
       if user_input<1 or user_input>16:
          print("This number is out of bounds")
          return False
       else: return True
-    elif gridsize=="big":
+    elif gridsize=="3":
       if user_input<1 or user_input>25:
           print("This number is out of bounds.")
           return False
