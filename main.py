@@ -19,6 +19,17 @@
 
 import functions  as fun
 
+choice= input("Do you want to play against another player or the computer? ").lower()
+
+if choice=="computer":
+   username1 = input("Player 1 Enter your username:" )
+   print ("Hello "+username1)
+elif choice=="player":
+   username1 = input("Player 1 Enter your username:" )
+   print ("Hello "+username1)
+   username2 = input("Player 2 Enter your username:" )
+   print ("Hello "+username2)
+
 board= [
     ["-", "-","-"],
     ["-", "-","-"],
@@ -28,7 +39,6 @@ board= [
 import  os
 
 user_input="a"
-choice= input("Do you want to play against another player or the computer? ").lower()
 gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
 user= True # when true it refers to x, otherwise o
