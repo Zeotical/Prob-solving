@@ -37,12 +37,9 @@ board= [
 ]
 
 
-<<<<<<< HEAD
 user_input="a"
-=======
 user_input="#"
-choice= input("Do you want to play against another player or the computer? ").lower()
->>>>>>> 5699296d20516be070d8bd2a62d75dcb702e55b7
+
 gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
 user= True # when true it refers to x, otherwise o
