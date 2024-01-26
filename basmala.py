@@ -403,7 +403,7 @@ board4= [
 ]
 
 turns=0
-while turns<16:
+while True:
     active_user= fun.current_user(user)
     if user_input=="s":
         turns=0

@@ -52,7 +52,6 @@ board= [
 
 user_input="#"
 choice= input("Do you want to play against another player or the computer? ").lower()
->>>>>>> 5699296d20516be070d8bd2a62d75dcb702e55b7
 gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
 user= True # when true it refers to x, otherwise o
@@ -109,7 +108,7 @@ board4= [
 ]
 
 turns=0
-while turns<16:
+while True:
     active_user= fun.current_user(user)
     if user_input=="s":
         turns=0
@@ -163,7 +162,7 @@ board5=[
 ]
 
 turns=0
-while turns<25:
+while True:
    active_user= fun.current_user(user) 
    if user_input=="s":
         turns=0
