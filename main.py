@@ -3,10 +3,10 @@
 # Course: PSP0101 PROBLEM SOLVING AND PROGRAM DESIGN
 # Class: TL11-09
 # Year: 2023/24 Trimester 1
-# Names: MEMBER_NAME_1 | MEMBER_NAME_2 | MEMBER_NAME_3
-# IDs: MEMBER_ID_1 | MEMBER_ID_2 | MEMBER_ID_3
-# Emails: MEMBER_EMAIL_1 | MEMBER_EMAIL_2 | MEMBER_EMAIL_3
-# Phones: MEMBER_PHONE_1 | MEMBER_PHONE_2 | MEMBER_PHONE_3
+# Names: MEMBER_NAME_1 | MEMBER_NAME_2 | NURUL HAIFA ALIAH BINTI MOHD YAZID
+# IDs: MEMBER_ID_1 | MEMBER_ID_2 | 1231102000
+# Emails: MEMBER_EMAIL_1 | MEMBER_EMAIL_2 | 1231102000@STUDENT.MMU.EDU.MY
+# Phones: MEMBER_PHONE_1 | MEMBER_PHONE_2 | 012-721-1586
 # *********************************************************
 
 
@@ -112,7 +112,7 @@ board4= [
 ]
 
 turns=0
-while turns<16:
+while True:
     active_user= fun.current_user(user)
     if user_input=="s":
         turns=0
@@ -167,7 +167,7 @@ board5=[
 ]
 
 turns=0
-while turns<25:
+while True:
    active_user= fun.current_user(user) 
    if user_input=="s":
         turns=0

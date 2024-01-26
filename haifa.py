@@ -197,7 +197,7 @@ while turns<25:
    if user and fun.iswin(active_user,board5):
           user=username1 
           print(f"{username1} won!")
-   elif user=="False" and fun.iswin(active_user,board4):
+   elif user=="False" and fun.iswin(active_user,board5):
          user=username2
          print(f"{username2} won!")
          user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
