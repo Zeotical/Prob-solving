@@ -194,12 +194,14 @@ while turns<25:
       fun.print_board(board5)
       print()
       print(f"{active_user} won!")
-      break
+      user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
+   if fun.quit(user_input): break
    turns+=1
    if turns==25:
       print()
       fun.print_board(board5)
       print()
       print("It's a draw!")
-      break
+      user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
+   if fun.quit(user_input): break
    user = not user
