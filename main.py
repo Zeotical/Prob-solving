@@ -1,3 +1,16 @@
+# *********************************************************
+# Program: YOUR_FILENAME.py
+# Course: PSP0101 PROBLEM SOLVING AND PROGRAM DESIGN
+# Class: TL11-09
+# Year: 2023/24 Trimester 1
+# Names: MEMBER_NAME_1 | MEMBER_NAME_2 | MEMBER_NAME_3
+# IDs: MEMBER_ID_1 | MEMBER_ID_2 | MEMBER_ID_3
+# Emails: MEMBER_EMAIL_1 | MEMBER_EMAIL_2 | MEMBER_EMAIL_3
+# Phones: MEMBER_PHONE_1 | MEMBER_PHONE_2 | MEMBER_PHONE_3
+# *********************************************************
+
+
+
 
 # """ #This is called a docstring.It is  used to document Python modules, classes, functions, and methods. 
 #     #Enclosed in triple quotes, either single or double, and are placed immediately after the definition of the module, class, function, or method.
@@ -37,12 +50,8 @@ board= [
 ]
 
 
-<<<<<<< HEAD
-user_input="a"
-=======
 user_input="#"
 choice= input("Do you want to play against another player or the computer? ").lower()
->>>>>>> 5699296d20516be070d8bd2a62d75dcb702e55b7
 gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
 user= True # when true it refers to x, otherwise o
@@ -91,17 +100,6 @@ while True :
     if fun.quit(user_input): break
     user = not user
 
-"""
-Basmala 1231102801 code
-
-#4*4 board
-#win function
-#draw function
-#user input and toggle b/w users
-#check if space is already taken
-#check if user enters smth else make them go again
-
-"""
 board4= [
     ["-","-","-","-"],
     ["-","-","-","-"],
@@ -153,17 +151,7 @@ while turns<16:
     if fun.quit(user_input): break 
     user=not user
     
-"""
-Basmala 1231102801 code
-
-#5*5 board
-#win function
-#draw function
-#user input and toggle b/w users
-#check if space is already taken
-#check if user enters smth else make them go again
-
-"""   
+  
 
 board5=[
    ["-","-","-","-","-"],
