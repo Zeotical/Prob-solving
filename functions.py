@@ -92,6 +92,7 @@ def startagain(user_input,gridsize):
    elif user_input=="s" and gridsize=="big":
      os.system("cls")
      print("New start")
+
 #Functions I had to make multiple different versions of
 
 def coordinates(user_input):

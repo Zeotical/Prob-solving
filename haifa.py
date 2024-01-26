@@ -18,7 +18,6 @@
 
 import functions  as fun
 
-
 choice= input("Do you want to play against another player or the computer? ").lower()
 
 if choice=="computer":
@@ -30,7 +29,6 @@ elif choice=="player":
    username2 = input("Player 2 Enter your username:" )
    print ("Hello "+username2)
 
-
 board= [
     ["-", "-","-"],
     ["-", "-","-"],
@@ -40,7 +38,6 @@ board= [
 import  os
 
 user_input="a"
-# choice= input("Do you want to play against another player or the computer? ").lower()
 gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
 user= True # when true it refers to x, otherwise o
@@ -188,10 +185,12 @@ while turns<25:
    ["-","-","-","-","-"],
    ["-","-","-","-","-"],
    ["-","-","-","-","-"] ]
-   fun.print_board(board5)
+      fun.print_board(board5)
    if choice=="computer" and user== False:
       user_input= str(fun.computer(gridsize))
       print(f"The computer enters: {user_input}")
+   else:
+      user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ")   
    if fun.startagain(user_input):continue
    if fun.quit(user_input): break
    if not fun.check_input5(user_input):
