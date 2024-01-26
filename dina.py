@@ -34,53 +34,7 @@ gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 user= True # when true it refers to x, otherwise o
 
 
-turns= 0
-while turns<9 :
-    import time
-    x = int(input("num: "))
-    while 
 
-    if user_input !="s":
-     fun.print_board(board) 
-    elif user_input=="s":
-     os.system("cls")
-     print("New start")
-    
-     board= [
-    ["-", "-","-"],
-    ["-", "-","-"],
-    ["-", "-","-"]]
-     fun.print_board(board) 
-    if choice=="computer" and user== False:
-      user_input= str(fun.computer(gridsize))
-      print(f"The computer enters: {user_input}")
-    else:
-      user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ") 
-    if fun.startagain(user_input):continue
-    if fun.quit(user_input): break
-    if not fun.check_input(user_input):
-        print("Please try again.")
-        continue
-    user_input= int(user_input) - 1
-    active_user = fun.current_user(user)
-    coords = fun.coordinates(user_input)
-    if fun.istaken(coords, board):
-        print("Please try again.")
-        continue
-    fun.add_to_board(coords,board,active_user)
-    if fun.iswin(active_user,board):
-        print()
-        fun.print_board(board)
-        print()
-        print(f"{active_user.upper()} won!")
-        break
-    turns +=1
-    if turns==9 :
-        print()
-        fun.print_board(board)
-        print()
-        print("It's a draw!")
-    user = not user
 
 """
 Basmala 1231102801 code
