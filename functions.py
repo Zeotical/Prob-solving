@@ -71,25 +71,47 @@ def bounds (user_input,gridsize):
       else: return True
 
 def computer(gridsize):
-   if gridsize== "small":
+   if gridsize== "1":
       user_input= random.randint(1,9)
       return user_input
-   elif gridsize== "medium":
+   elif gridsize== "2":
       user_input= random.randint(1,16)
       return user_input
-   elif gridsize=="big":
+   elif gridsize=="3":
       user_input= random.randint(1,25)
       return user_input
 
+def tic_tac_toe(gridsize):
+ if gridsize=="1":
+    board= [
+    ["-", "-","-"],
+    ["-", "-","-"],
+    ["-", "-","-"]
+]
+ if gridsize=="2":
+    board4= [
+    ["-","-","-","-"],
+    ["-","-","-","-"],
+    ["-","-","-","-"],
+    ["-","-","-","-"]
+]
+ if gridsize=="3":
+    board5=[
+   ["-","-","-","-","-"],
+   ["-","-","-","-","-"],
+   ["-","-","-","-","-"],
+   ["-","-","-","-","-"],
+   ["-","-","-","-","-"]
+]
 
 def startagain(user_input,gridsize):
-   if user_input=="s" and gridsize=="small":
+   if user_input=="s" and gridsize=="1":
      os.system("cls")
      print("New start")
-   elif user_input=="s" and gridsize=="medium":
+   elif user_input=="s" and gridsize=="2":
      os.system("cls")
      print("New start")
-   elif user_input=="s" and gridsize=="big":
+   elif user_input=="s" and gridsize=="3":
      os.system("cls")
      print("New start")
 
