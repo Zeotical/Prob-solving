@@ -17,20 +17,20 @@
 # toggle between users upon succesful moves
 # """
 
-import functions  as fun
+# import functions  as fun
 
-board= [
-    ["-", "-","-"],
-    ["-", "-","-"],
-    ["-", "-","-"]
-]
+# board= [
+#     ["-", "-","-"],
+#     ["-", "-","-"],
+#     ["-", "-","-"]
+# ]
 
-import  os
+# import  os
 
-choice= input("Do you want to play against another player or the computer? ").lower()
-gridsize=input("Enter a gridsize from small,medium and big: ").lower()
+# choice= input("Do you want to play against another player or the computer? ").lower()
+# gridsize=input("Enter a gridsize from small,medium and big: ").lower()
 
-user= True # when true it refers to x, otherwise o
+# user= True # when true it refers to x, otherwise o
 
 
 # turns= 0
@@ -90,12 +90,12 @@ Basmala 1231102801 code
 #check if user enters smth else make them go again
 
 """
-board4= [
-    ["-","-","-","-"],
-    ["-","-","-","-"],
-    ["-","-","-","-"],
-    ["-","-","-","-"]
-]
+# board4= [
+#     ["-","-","-","-"],
+#     ["-","-","-","-"],
+#     ["-","-","-","-"],
+#     ["-","-","-","-"]
+# ]
 
 # turns=0
 # while turns<16:
@@ -210,56 +210,85 @@ Basmala 1231102801 code
 
 
 
-board5=[
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"]
+
+# """ #This is called a docstring.It is  used to document Python modules, classes, functions, and methods. 
+#     #Enclosed in triple quotes, either single or double, and are placed immediately after the definition of the module, class, function, or method.
+#     #can span multiple lines and be used to describe the purpose of the code, its inputs, outputs, and any relevant information
+# tic tac toe board
+# [
+#     [-,-, -],
+#     [-,-, -],
+#     [-,-, -]
+# ]
+
+# user-input -> something 1-9
+# if they enter anything else: tell them to go again
+# check if the user_input is already taken
+# add it to the board
+# chech if usr won: checking rows, columns and diagonals
+# toggle between users upon succesful moves
+# """
+
+#   choice= input("Do you want to play against another player or the computer? ").lower()
+   #   gridsize=input("Enter a gridsize from small,medium and big: ").lower()
+   #  if choice=="player":
+   #    user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ") 
+   #  elif choice!="computer" or choice!="player":
+   #     print("This is an invalid input, please try again.")
+   #     choice= input("Do you want to play against another player or the computer? ").lower() 
+   #  elif choice=="computer" and user== False:
+   #    user_input= str(fun.computer(gridsize))
+   #    print(f"The computer enters: {user_input}")   
+   #  elif gridsize!='small' or gridsize!="medium" or gridsize!="big":
+   #     print("This is an invalid input, please try again.")
+      #  gridsize=input("Enter a gridsize from small,medium and big: ").lower() 
+
+  #  if user_input=="save":
+   #    f=open("unsavedgame.txt","a")
+   #    f.write(str(f"{board}\n"))
+   #    f.close()
+   #  if user_input=="continue":
+   #    f=open("unsavedgame.txt","r") 
+   #    open=f.read()
+   #    f.close() 
+   #    board= print(open)
+   #    fun.print_board(board)
+   #    continue   
+
+import functions  as fun
+
+board= [
+    ["-", "-","-"],
+    ["-", "-","-"],
+    ["-", "-","-"]
 ]
-user_input="a"
-turns=0
-while turns<25:
-   active_user= fun.current_user(user) 
-   if user_input !="s":
-    fun.print_board(board5) 
-   elif user_input=="s":
-      os.system("cls")
-      print("New start")
-      board5=[
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"] ]
-   fun.print_board(board5)
-   if choice=="computer" and user== False:
-      user_input= str(fun.computer(gridsize))
-      print(f"The computer enters: {user_input}")
-   else:
-      user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ")    
-   if fun.startagain(user_input):continue
-   if fun.quit(user_input): break
-   if not fun.check_input5(user_input):
-      print("Please try again.")
-      continue
-   user_input= int(user_input)-1
-   coords= fun.coordinates5(user_input)
-   if fun.istaken(coords,board5):
-      print("Please try again.")
-      continue
-   fun.add_to_board(coords,board5,active_user)
-   if fun.iswin5(active_user,board5):
-      print()
-      fun.print_board(board5)
-      print()
-      print(f"{active_user} won!")
-      break
-   turns+=1
-   if turns==25:
-      print()
-      fun.print_board(board5)
-      print()
-      print("It's a draw!")
-      break
-   user = not user
+
+import  os
+score=0
+def highscore(active_user):
+   global score
+   score+=150
+   print(f"{active_user} your score is {score}")
+
+again="a"
+choice= input("Do you want to play against another player or the computer? ").lower()
+gridsize=input("Enter a gridsize from small,medium and big: ").lower()
+
+user= True # when true it refers to x, otherwise o
+
+# def check_input(user_input):
+#      #chech if it's a number
+#      if not fun.isnum(user_input): return False
+#      user_input = int(user_input)
+#      #check if it's 1-9
+#      if gridsize=="small":
+#       if not fun.bounds(user_input):return False
+#       return True
+#      elif gridsize=="medium":
+#         if not fun.bounds4(user_input): return False
+#         return True
+#      elif gridsize=="big":
+#         if not fun.bounds4(user_input):return False
+#         return True
+turns= 0
+user_input="#"

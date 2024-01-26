@@ -37,6 +37,39 @@ def istaken(coords,board):
     return True
  else: return False 
 
+def check_input(user_input,gridsize):
+     #chech if it's a number
+     if not isnum(user_input): return False
+     user_input = int(user_input)
+     #check if it's 1-9
+     if gridsize=="small":
+      if not bounds(user_input,gridsize):return False
+      else:return True
+     elif gridsize=="medium":
+      if not bounds(user_input,gridsize): return False
+      else:return True
+     elif gridsize=="big":
+      if not bounds(user_input,gridsize):return False
+      else:return True
+
+
+def bounds (user_input,gridsize):
+    if gridsize=="small": 
+      if user_input>9 or user_input <1:
+         print("This number is out of bounds")
+         return False
+      else: return True
+    elif gridsize=="medium":
+      if user_input<1 or user_input>16:
+         print("This number is out of bounds")
+         return False
+      else: return True
+    elif gridsize=="big":
+      if user_input<1 or user_input>25:
+          print("This number is out of bounds.")
+          return False
+      else: return True
+
 def computer(gridsize):
    if gridsize== "small":
       user_input= random.randint(1,9)
@@ -49,27 +82,18 @@ def computer(gridsize):
       return user_input
 
 
-def startagain(user_input):
-   if user_input=="s":
-    os.system('cls') #tried using clear but apparantly windows only supports this? absoulte loss.
-    return True
-   else: return False  
+def startagain(user_input,gridsize):
+   if user_input=="s" and gridsize=="small":
+     os.system("cls")
+     print("New start")
+   elif user_input=="s" and gridsize=="medium":
+     os.system("cls")
+     print("New start")
+   elif user_input=="s" and gridsize=="big":
+     os.system("cls")
+     print("New start")
 
 #Functions I had to make multiple different versions of
-
-def check_input(user_input):
-     #chech if it's a number
-     if not isnum(user_input): return False
-     user_input = int(user_input)
-     #check if it's 1-9
-     if not bounds(user_input):return False
-     return True
-
-def bounds (user_input):
-    if user_input>9 or user_input <1:
-        print("This number is out of bounds")
-        return False
-    else: return True
 
 def coordinates(user_input):
      row = int(user_input/3)
@@ -107,19 +131,6 @@ def iswin(user, board):
     if check_row(user, board): return True
     if check_col(user, board): return True  
     if check_diag(user,board): return True 
-
-
-def check_input4(user_input):
-    if not isnum(user_input): return False
-    user_input= int(user_input)
-    if not bounds4(user_input):return False
-    return True     
-
-def bounds4(user_input):
-    if user_input<1 or user_input>16:
-        print("This number is out of bounds")
-        return False
-    else: return True
 
 def coordinates4(user_input):
     row= int(user_input/4)
@@ -161,18 +172,6 @@ def check_diag4(user,board4):
         board4[2][1]== user and board4[3][0]==user:
       return True
    else: return False   
-
-def  check_input5(user_input):
-   if not isnum(user_input): return False
-   user_input= int(user_input)
-   if not bounds5(user_input): return False
-   return True
-
-def bounds5(user_input):
-   if user_input<1 or user_input>25:
-      print("This number is out of bounds.")
-      return False
-   else: return True
 
 def coordinates5(user_input):
    row = int(user_input/5)
