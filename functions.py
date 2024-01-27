@@ -1,6 +1,6 @@
 import random, os
 
-#Functions I didn't have to make more of?
+#Functions that have one version
 
 def print_board(board):
     for row in board:
@@ -28,6 +28,18 @@ def add_to_board(coords,board,active_user):
     row = coords[0]
     col= coords[1]
     board[row][col]= active_user
+
+def scoresleaderboard(score1,score2,username1,username2):
+  if score1>score2:
+    print("Highscore Leaderboard")
+    print(f"1. {username1} {score1}")
+    print(f"2. {username2} {score2}")
+  
+  elif score2>score1:
+    print("Current Highscores")
+    print(f"1. {username1} {score1}")
+    print(f"2. {username2} {score2}")
+
 
 def istaken(coords,board):
  row = coords[0]
@@ -81,29 +93,6 @@ def computer(gridsize):
       user_input= random.randint(1,25)
       return user_input
 
-def tic_tac_toe(gridsize):
- if gridsize=="1":
-    board= [
-    ["-", "-","-"],
-    ["-", "-","-"],
-    ["-", "-","-"]
-]
- if gridsize=="2":
-    board4= [
-    ["-","-","-","-"],
-    ["-","-","-","-"],
-    ["-","-","-","-"],
-    ["-","-","-","-"]
-]
- if gridsize=="3":
-    board5=[
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"],
-   ["-","-","-","-","-"]
-]
-
 def startagain(user_input,gridsize):
    if user_input=="s" and gridsize=="1":
      os.system("cls")
@@ -115,7 +104,7 @@ def startagain(user_input,gridsize):
      os.system("cls")
      print("New start")
 
-#Functions I had to make multiple different versions of
+#Functions that have multiple different versions 
 
 def coordinates(user_input):
      row = int(user_input/3)
