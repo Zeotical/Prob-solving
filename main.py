@@ -46,7 +46,7 @@ choice= input("Do you want to play against another player or the computer? ").lo
 if choice=="computer":
    username1 = input("Player 1 Enter your username:" )
    print ("Hello "+username1)
-   username2="computer"	
+	 username2="computer"	
 elif choice=="player":
    username1 = input("Player 1 Enter your username:" )
    print ("Hello "+username1)
