@@ -84,13 +84,13 @@ def bounds (user_input,gridsize):
 
 def computer(gridsize):
    if gridsize== "1":
-      user_input= random.randint(1,9)
+      user_input= random.randint(1,10)
       return user_input
    elif gridsize== "2":
-      user_input= random.randint(1,16)
+      user_input= random.randint(1,17)
       return user_input
    elif gridsize=="3":
-      user_input= random.randint(1,25)
+      user_input= random.randint(1,26)
       return user_input
 
 def startagain(user_input,gridsize):
