@@ -30,7 +30,7 @@
 # toggle between users upon succesful moves
 # """
 
-import os, functions  as fun
+import time, functions  as fun
 
 board= [
     ["-", "-","-"],
@@ -64,7 +64,6 @@ while True:
     else:
         print("Invalid choice. Please enter 1, 2, or 3")
 
-fun.tic_tac_toe(gridsize)
 
 
 
@@ -79,12 +78,13 @@ turns= 0
 if gridsize=="1":
     starttime=time.time()
     while True:
+        starttime=time.time()
         if user_input=="s":
              turns=0
+             starttime=time.time()
              fun.startagain(user_input,gridsize)
              choice= input("Do you want to play against another player or the computer? ").lower()
              gridsize="1"
-             fun.tic_tac_toe(gridsize)
              if choice=="computer":
                 username1 = input("Player 1 Enter your username:" )
                 print ("Hello "+username1)
@@ -162,10 +162,10 @@ if gridsize=="2":
     while True:
         if user_input=="s":
              turns=0
+             starttime=time.time()
              fun.startagain(user_input,gridsize)
              choice= input("Do you want to play against another player or the computer? ").lower()
              gridsize="2"
-             fun.tic_tac_toe(gridsize)
              if choice=="computer":
                 username1 = input("Player 1 Enter your username:" )
                 print ("Hello "+username1)
@@ -191,7 +191,7 @@ if gridsize=="2":
             print("Please try again.")
             continue
         user_input= int(user_input) - 1
-        active_user = fun.current_user(user)
+        active_user= fun.current_user(user)
         coords = fun.coordinates4(user_input)
         if fun.istaken(coords, board4):
             print("Please try again.")
@@ -202,7 +202,7 @@ if gridsize=="2":
            fun.print_board(board4)
            print()
            user=username1 
-            elapsed_time = time.time() - starttime
+           elapsed_time = time.time() - starttime
            if elapsed_time <= 60:
             print(f"{username1} won!")
            elif elapsed_time>60:
@@ -217,8 +217,8 @@ if gridsize=="2":
           elapsed_time= time.time() - starttime
           if elapsed_time <= 60:
              print(f"{username2} won!")
-        elif elapsed_time>60:
-          print("Sadly, you played over the time limit :(")
+          elif elapsed_time>60:
+           print("Sadly, you played over the time limit :(")
           user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
           if fun.quit(user_input): break
         turns +=1
@@ -241,13 +241,13 @@ board5=[
 
 if gridsize=="3":
     starttime=time.time()
-  while True:
+    while True:
       if user_input=="s":
            turns=0
+           starttime=time.time()
            fun.startagain(user_input,gridsize)
            choice= input("Do you want to play against another player or the computer? ").lower()
            gridsize="3"
-           fun.tic_tac_toe(gridsize)
            if choice=="computer":
               username1 = input("Player 1 Enter your username:" )
               print ("Hello "+username1)
