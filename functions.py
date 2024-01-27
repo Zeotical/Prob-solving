@@ -36,7 +36,7 @@ def scoresleaderboard(score1,score2,username1,username2):
     print(f"2. {username2} {score2}")
   
   elif score2>score1:
-    print("Current Highscores")
+    print(" Highscore Leaderboard")
     print(f"1. {username1} {score1}")
     print(f"2. {username2} {score2}")
 
