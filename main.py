@@ -3,10 +3,10 @@
 # Course: PSP0101 PROBLEM SOLVING AND PROGRAM DESIGN
 # Class: TL11-09
 # Year: 2023/24 Trimester 1
-# Names: Basmala Mohammed Ali Elimam | Nur Dina Ainulhayat Binti Mohd Affandy | NURUL HAIFA ALIAH BINTI MOHD YAZID
-# IDs: 1231102801 | 123 | 1231102000
-# Emails: 1231102801@student.mmu.edu.my | MEMBER_EMAIL_2 | 1231102000@STUDENT.MMU.EDU.MY
-# Phones:  | MEMBER_PHONE_2 | 012-721-1586
+# Names: Basmala Mohammed Ali Elimam | Nur Dina Ainulhayat Binti Mohd Affandy | Nurul Haifa Aliah Binti Mohd Yazid
+# IDs: 1231102801 | 1231102033 | 1231102000
+# Emails: 1231102801@student.mmu.edu.my | 1231102033@student.mmu.edu.my | 1231102000@student.mmu.edu.my
+# Phones:  | 010-362-9106 | 012-721-1586
 # *********************************************************
 
 
@@ -77,6 +77,7 @@ board= [         #added board since it used to take the previous games' input
       ["-", "-","-"]]
 turns= 0
 if gridsize=="1":
+    starttime=time.time()
     while True:
         if user_input=="s":
              turns=0
@@ -119,7 +120,11 @@ if gridsize=="1":
            fun.print_board(board)
            print()
            user=username1 
-           print(f"{username1} won!")
+           elapsed_time = time.time() - starttime
+           if elapsed_time <= 30:
+            print(f"{username1} won!")
+           elif elapsed_time>30:
+            print("Sadly, you played over the time limit :(")
            user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
            if fun.quit(user_input): break
         elif user==False and fun.iswin(active_user,board):
@@ -127,7 +132,11 @@ if gridsize=="1":
           fun.print_board(board)
           print()
           user=username2
-          print(f"{username2} won!")
+          elapsed_time = time.time() - starttime
+          if elapsed_time <= 30:
+            print(f"{username2} won!")
+          elif elapsed_time>30:
+            print("Sadly, you played over the time limit :(")
           user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
           if fun.quit(user_input): break
         turns +=1
@@ -149,6 +158,7 @@ board4= [
 
 turns=0
 if gridsize=="2":
+    starttime=time.time()
     while True:
         if user_input=="s":
              turns=0
@@ -192,7 +202,11 @@ if gridsize=="2":
            fun.print_board(board4)
            print()
            user=username1 
-           print(f"{username1} won!")
+            elapsed_time = time.time() - starttime
+           if elapsed_time <= 60:
+            print(f"{username1} won!")
+           elif elapsed_time>60:
+            print("Sadly, you played over the time limit :(")
            user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
            if fun.quit(user_input): break
         elif user==False and fun.iswin4(active_user,board4):
@@ -200,7 +214,11 @@ if gridsize=="2":
           fun.print_board(board4)
           print()
           user=username2
-          print(f"{username2} won!")
+          elapsed_time= time.time() - starttime
+          if elapsed_time <= 60:
+             print(f"{username2} won!")
+        elif elapsed_time>60:
+          print("Sadly, you played over the time limit :(")
           user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
           if fun.quit(user_input): break
         turns +=1
@@ -222,6 +240,7 @@ board5=[
 ]
 
 if gridsize=="3":
+    starttime=time.time()
   while True:
       if user_input=="s":
            turns=0
@@ -267,7 +286,11 @@ if gridsize=="3":
          fun.print_board(board5)
          print()
          user=username1 
-         print(f"{username1} won!")
+         elapsed_time = time.time() - starttime
+         if elapsed_time <= 90:
+            print(f"{username1} won!")
+         elif elapsed_time>90:
+            print("Sadly, you played over the time limit :(")
          user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
          if fun.quit(user_input): break
       elif user==False and fun.iswin5(active_user,board5):
@@ -275,7 +298,11 @@ if gridsize=="3":
         fun.print_board(board5)
         print()
         user=username2
-        print(f"{username2} won!")
+        elapsed_time = time.time() - starttime
+        if elapsed_time <= 90:
+            print(f"{username2} won!")
+        elif elapsed_time>90:
+            print("Sadly, you played over the time limit :(")
         user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
         if fun.quit(user_input): break
 
