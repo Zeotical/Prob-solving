@@ -85,15 +85,15 @@ if gridsize=="1":
              fun.startagain(user_input,gridsize) #Basmala
              choice= input("Do you want to play against another player or the computer? ").lower()  #Basmala
              gridsize="1" #Basmala
-             if choice=="computer":
-                username1 = input("Player 1 Enter your username:" )
-                print ("Hello "+username1)
-                username2="computer" 
-             elif choice=="player":
-                username1 = input("Player 1 Enter your username:" )
-                print ("Hello "+username1)
-                username2 = input("Player 2 Enter your username:" )
-                print ("Hello "+username2)
+             if choice=="computer": #Haifa
+                username1 = input("Player 1 Enter your username:" ) #Haifa
+                print ("Hello "+username1) #Haifa
+                username2="computer"  #Haifa
+             elif choice=="player": #Haifa
+                username1 = input("Player 1 Enter your username:" ) #Haifa
+                print ("Hello "+username1) #Haifa
+                username2 = input("Player 2 Enter your username:" ) #Haifa
+                print ("Hello "+username2) #Haifa
              board= [         #added board since it used to take the previous games' input 
         ["-", "-","-"],
         ["-", "-","-"],
@@ -115,10 +115,10 @@ if gridsize=="1":
             print("Please try again.")
             continue
         fun.add_to_board(coords,board,active_user)
-        if user and fun.iswin(active_user,board):
-           print()
-           fun.print_board(board)
-           print()
+        if user and fun.iswin(active_user,board): #Haifa
+           print() #Haifa
+           fun.print_board(board) #Haifa
+           print() #Haifa
            user=username1 
            elapsed_time = time.time() - starttime
            if elapsed_time <= 30:
@@ -207,10 +207,10 @@ if gridsize=="2":
             print("Please try again.")
             continue
         fun.add_to_board(coords,board4,active_user)
-        if user and fun.iswin4(active_user,board4):
-           print()
-           fun.print_board(board4)
-           print()
+        if user and fun.iswin4(active_user,board4): #Haifa
+           print() #Haifa
+           fun.print_board(board4) #Haifa
+           print() #Haifa
            user=username1 
            elapsed_time = time.time() - starttime
            if elapsed_time <= 60:
@@ -301,10 +301,10 @@ if gridsize=="3":
           print("Please try again.")
           continue
       fun.add_to_board(coords,board5,active_user)
-      if user and fun.iswin5(active_user,board5): 
-         print()
-         fun.print_board(board5)
-         print()
+      if user and fun.iswin5(active_user,board5): #Haifa
+         print() #Haifa
+         fun.print_board(board5) #Haifa
+         print() #Haifa
          user=username1 
          elapsed_time = time.time() - starttime
          if elapsed_time <= 90:
