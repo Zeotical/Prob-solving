@@ -9,6 +9,8 @@
 # Phones: +601167770850 | 010-362-9106 | 012-721-1586
 # *********************************************************
 
+#NOTE code which doesn't have a hastag with a member's name is from the tutorial or was alternated 
+#based on the tutorial
 
 
 
@@ -43,7 +45,7 @@ user_input="#"
 score1=0
 score2=0
 
-choice= input("Do you want to play against another player or the computer? ").lower()
+choice= input("Do you want to play against another player or the computer? ").lower() #Basmala
 
 
 if choice=="computer":
@@ -71,9 +73,9 @@ while True:
 
 
 
-user= True # when true it refers to x, otherwise o
+user= True # when true it refers to x, otherwise o 
 
-board= [         #added board since it used to take the previous games' input
+board= [         
       ["-", "-","-"],
       ["-", "-","-"],
       ["-", "-","-"]]
@@ -145,10 +147,10 @@ if gridsize=="1":
             print(f"{username2} won!")
             score2+=150
             print(f"Your score is {score2}")
-            fun.highscores(score1,score2)
+            fun.scoresleaderboard(score1,score2,username1,username2)
           elif elapsed_time>30:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2)
+            fun.scoresleaderboard(score1,score2,username1,username2)
           user=False
           user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
           if fun.quit(user_input): break
@@ -219,11 +221,11 @@ if gridsize=="2":
            if elapsed_time <= 60:
             score1+=150
             print(f"Your score is {score1}")
-            fun.scoresleaderboard(score1,score2)
+            fun.scoresleaderboard(score1,score2,username1,username2)
             print(f"{username1} won!")
            elif elapsed_time>60:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2)
+            fun.scoresleaderboard(score1,score2,username1,username2)
            user=True 
            user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
            if fun.quit(user_input): break
@@ -304,7 +306,7 @@ if gridsize=="3":
           print("Please try again.")
           continue
       fun.add_to_board(coords,board5,active_user)
-      if user and fun.iswin5(active_user,board5):
+      if user and fun.iswin5(active_user,board5): 
          print()
          fun.print_board(board5)
          print()
@@ -313,11 +315,11 @@ if gridsize=="3":
          if elapsed_time <= 90:
             score1+=150
             print(f"Your score is {score1}")
-            fun.scoresleaderboard(score1,score2)
+            fun.scoresleaderboard(score1,score2,username1,username2)
             print(f"{username1} won!")
          elif elapsed_time>90:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2) 
+            fun.scoresleaderboard(score1,score2,username1,username2) 
          user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
          if fun.quit(user_input): break
       elif user==False and fun.iswin5(active_user,board5):
@@ -327,13 +329,13 @@ if gridsize=="3":
         user=username2
         elapsed_time = time.time() - starttime
         if elapsed_time <= 90:
-            score2+=150
-            print(f"Your score is {score2}")
-            fun.scoresleaderboard(score1,score2)
+            score2+=150 #Basmala
+            print(f"Your score is {score2}") #Basmala
+            fun.scoresleaderboard(score1,score2) #Basmala
             print(f"{username2} won!")
         elif elapsed_time>90:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2)
+            fun.scoresleaderboard(score1,score2) #Basmala
         user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
         if fun.quit(user_input): break
 

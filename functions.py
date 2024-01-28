@@ -2,7 +2,7 @@ import random, os
 
 #Functions that have one version
 
-def print_board(board):
+def print_board(board): #From here
     for row in board:
         for slot in row:
             print(f"{slot} ", end="")
@@ -29,29 +29,7 @@ def add_to_board(coords,board,active_user):
     col= coords[1]
     board[row][col]= active_user
 
-def scoresleaderboard(score1,score2,username1,username2):
-  if score1>score2:
-    print("Highscore Leaderboard")
-    print(f"1. {username1} {score1}")
-    print(f"2. {username2} {score2}")
-    f = open("highscores.txt", "a")
-    f.write(f"1.{username1} {score1}\n")
-    f.write(f"2. {username2} {score2}\n")
-    f.close()
-
-  
-  elif score2>score1:
-    print(" Highscore Leaderboard")
-    print(f"1. {username2} {score2}")
-    print(f"2. {username1} {score1}")
-    f = open("highscores.txt", "a")
-    f.write(f"1.{username2} {score2}\n")
-    f.write(f"2. {username1} {score1}\n")
-    f.close()
-
-
-
-def istaken(coords,board):
+def istaken(coords,board): #Until here these are tutorial functions
  row = coords[0]
  col = coords[1]
  if board[row][col]!= "-":
@@ -59,7 +37,7 @@ def istaken(coords,board):
     return True
  else: return False 
 
-def check_input(user_input,gridsize):
+def check_input(user_input,gridsize): #Alternated based on tutorial
      #chech if it's a number
      if not isnum(user_input): return False
      user_input = int(user_input)
@@ -75,7 +53,7 @@ def check_input(user_input,gridsize):
       else:return True
 
 
-def bounds (user_input,gridsize):
+def bounds (user_input,gridsize): #Alternated based on tutorial
     if gridsize=="1": 
       if user_input>9 or user_input <1:
          print("This number is out of bounds")
@@ -92,7 +70,26 @@ def bounds (user_input,gridsize):
           return False
       else: return True
 
-def computer(gridsize):
+def scoresleaderboard(score1,score2,username1,username2): #Basmala
+  if score1>score2:
+    print("Highscore Leaderboard")
+    print(f"1. {username1} {score1}")
+    print(f"2. {username2} {score2}")
+    f = open("highscores.txt", "a")
+    f.write(f"1.{username1} {score1}\n")
+    f.write(f"2. {username2} {score2}\n")
+    f.close()
+
+  elif score2>score1:
+    print(" Highscore Leaderboard")
+    print(f"1. {username2} {score2}")
+    print(f"2. {username1} {score1}")
+    f = open("highscores.txt", "a")
+    f.write(f"1.{username2} {score2}\n")
+    f.write(f"2. {username1} {score1}\n")
+    f.close()
+
+def computer(gridsize): #Basmala
    if gridsize== "1":
       user_input= random.randint(1,10)
       return user_input
@@ -103,7 +100,7 @@ def computer(gridsize):
       user_input= random.randint(1,26)
       return user_input
 
-def startagain(user_input,gridsize):
+def startagain(user_input,gridsize): #Basmala
    if user_input=="s" and gridsize=="1":
      os.system("cls")
      print("New start")
@@ -116,7 +113,7 @@ def startagain(user_input,gridsize):
 
 #Functions that have multiple different versions 
 
-def coordinates(user_input):
+def coordinates(user_input): #From here
      row = int(user_input/3)
      col= user_input
      if col>2: col= int(col%3)
@@ -148,12 +145,12 @@ def check_diag(user, board):
     elif board[0][2]== user and board[1][1] ==user and board [2][0]==user: return True
     else: return False
 
-def iswin(user, board):
+def iswin(user, board):  #Until here these are tutorial functions
     if check_row(user, board): return True
     if check_col(user, board): return True  
     if check_diag(user,board): return True 
 
-def coordinates4(user_input):
+def coordinates4(user_input): #from here until the end these are functions alternated based on the tutorial
     row= int(user_input/4)
     col= user_input
     if col>3 : col= int(col%4)
