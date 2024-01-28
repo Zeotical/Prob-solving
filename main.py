@@ -34,12 +34,7 @@
 
 import time, functions  as fun
 
-board= [
-    ["-", "-","-"],
-    ["-", "-","-"],
-    ["-", "-","-"]
-]
-
+print("Welcomw to another generic x-o game!")
 
 user_input="#"
 score1=0
