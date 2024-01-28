@@ -10,7 +10,7 @@
 # *********************************************************
 
 #NOTE code which doesn't have a hastag with a member's name is from the tutorial or was alternated 
-#based on the tutorial
+#based on the tutorial,tutorial was followed by Basmala.
 
 
 
@@ -36,9 +36,9 @@ import time, functions  as fun
 
 print("Welcomw to another generic x-o game!")
 
-user_input="#"
-score1=0
-score2=0
+user_input="#" #Basmala
+score1=0 #Basmala
+score2=0 #Basmala
 
 choice= input("Do you want to play against another player or the computer? ").lower() #Basmala
 
@@ -79,12 +79,12 @@ if gridsize=="1":
     starttime=time.time()
     while True:
         starttime=time.time()
-        if user_input=="s":
-             turns=0
+        if user_input=="s": #Basmala
+             turns=0 #Basmala
              starttime=time.time()
-             fun.startagain(user_input,gridsize)
-             choice= input("Do you want to play against another player or the computer? ").lower()
-             gridsize="1"
+             fun.startagain(user_input,gridsize) #Basmala
+             choice= input("Do you want to play against another player or the computer? ").lower()  #Basmala
+             gridsize="1" #Basmala
              if choice=="computer":
                 username1 = input("Player 1 Enter your username:" )
                 print ("Hello "+username1)
@@ -94,15 +94,15 @@ if gridsize=="1":
                 print ("Hello "+username1)
                 username2 = input("Player 2 Enter your username:" )
                 print ("Hello "+username2)
-             board= [         #added board since it used to take the previous games' input
+             board= [         #added board since it used to take the previous games' input 
         ["-", "-","-"],
         ["-", "-","-"],
         ["-", "-","-"]]
         fun.print_board(board)    
-        if choice=="computer" and user== False:
-            user_input= str(fun.computer(gridsize))
-            print(f"The computer enters: {user_input}")
-        else:
+        if choice=="computer" and user== False:  #Basmala
+            user_input= str(fun.computer(gridsize)) #Basmala
+            print(f"The computer enters: {user_input}") #Basmala
+        else: #Basmala
             user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ") 
         if fun.quit(user_input): break
         if not fun.check_input(user_input,gridsize):
@@ -123,12 +123,12 @@ if gridsize=="1":
            elapsed_time = time.time() - starttime
            if elapsed_time <= 30:
             print(f"{username1} won!")
-            score1+=150
-            print(f"Your score is {score1}")
-            fun.scoresleaderboard(score1,score2,username1,username2)
+            score1+=150 #Basmala
+            print(f"Your score is {score1}") #Basmala
+            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
            elif elapsed_time>30:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2,username1,username2)   
+            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
            user=True
            user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
            if fun.quit(user_input): break
@@ -140,12 +140,12 @@ if gridsize=="1":
           elapsed_time = time.time() - starttime
           if elapsed_time <= 30:
             print(f"{username2} won!")
-            score2+=150
-            print(f"Your score is {score2}")
-            fun.scoresleaderboard(score1,score2,username1,username2)
+            score2+=150 #Basmala
+            print(f"Your score is {score2}") #Basmala
+            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
           elif elapsed_time>30:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2,username1,username2)
+            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
           user=False
           user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
           if fun.quit(user_input): break
@@ -170,12 +170,12 @@ turns=0
 if gridsize=="2":
     starttime=time.time()
     while True:
-        if user_input=="s":
-             turns=0
+        if user_input=="s": #Basmala
+             turns=0 #Basmala
              starttime=time.time()
-             fun.startagain(user_input,gridsize)
-             choice= input("Do you want to play against another player or the computer? ").lower()
-             gridsize="2"
+             fun.startagain(user_input,gridsize) #Basmala
+             choice= input("Do you want to play against another player or the computer? ").lower() #Basmala
+             gridsize="2" #Basmala
              if choice=="computer":
                 username1 = input("Player 1 Enter your username:" )
                 print ("Hello "+username1)
@@ -191,10 +191,10 @@ if gridsize=="2":
         ["-","-","-","-"],
         ["-","-","-","-"]]
         fun.print_board(board4)         
-        if choice=="computer" and user== False:
-            user_input= str(fun.computer(gridsize))
-            print(f"The computer enters: {user_input}")
-        else:
+        if choice=="computer" and user== False: #Basmala
+            user_input= str(fun.computer(gridsize)) #Basmala
+            print(f"The computer enters: {user_input}") #Basmala
+        else: #Basmala
             user_input=input("Please enter a position 1 through 16 or press \"q\" to quit: ") 
         if fun.quit(user_input): break
         if not fun.check_input(user_input,gridsize):
@@ -214,13 +214,13 @@ if gridsize=="2":
            user=username1 
            elapsed_time = time.time() - starttime
            if elapsed_time <= 60:
-            score1+=150
-            print(f"Your score is {score1}")
-            fun.scoresleaderboard(score1,score2,username1,username2)
+            score1+=150 #Basmala
+            print(f"Your score is {score1}") #Basmala
+            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
             print(f"{username1} won!")
            elif elapsed_time>60:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2,username1,username2)
+            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
            user=True 
            user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
            if fun.quit(user_input): break
@@ -231,13 +231,13 @@ if gridsize=="2":
           user=username2
           elapsed_time= time.time() - starttime
           if elapsed_time <= 60:
-             score2+=150
-             print(f"Your score is {score2}")
-             fun.scoresleaderboard(score1,score2,username1,username2)
+             score2+=150 #Basmala
+             print(f"Your score is {score2}") #Basmala
+             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
              print(f"{username2} won!")
           elif elapsed_time>60:
            print("Sadly, you played over the time limit :(")
-           fun.scoresleaderboard(score1,score2,username1,username2)
+           fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
           user=False 
           user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
           if fun.quit(user_input): break
@@ -265,8 +265,8 @@ if gridsize=="3":
       if user_input=="s":
            turns=0
            starttime=time.time()
-           fun.startagain(user_input,gridsize)
-           choice= input("Do you want to play against another player or the computer? ").lower()
+           fun.startagain(user_input,gridsize) #Basmala
+           choice= input("Do you want to play against another player or the computer? ").lower() #Basmala
            gridsize="3"
            if choice=="computer":
               username1 = input("Player 1 Enter your username:" )
@@ -285,9 +285,9 @@ if gridsize=="3":
               ["-","-","-","-","-"],
               ["-","-","-","-","-"] ]   
       fun.print_board(board5)
-      if choice=="computer" and user== False:
-           user_input= str(fun.computer(gridsize))
-           print(f"The computer enters: {user_input}")
+      if choice=="computer" and user== False: #Basmala
+           user_input= str(fun.computer(gridsize)) #Basmala
+           print(f"The computer enters: {user_input}") #Basmala
       else:
           user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ").lower()  
       if fun.quit(user_input): break
@@ -309,12 +309,12 @@ if gridsize=="3":
          elapsed_time = time.time() - starttime
          if elapsed_time <= 90:
             score1+=150
-            print(f"Your score is {score1}")
-            fun.scoresleaderboard(score1,score2,username1,username2)
+            print(f"Your score is {score1}") #Basmala
+            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
             print(f"{username1} won!")
          elif elapsed_time>90:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2,username1,username2) 
+            fun.scoresleaderboard(score1,score2,username1,username2)  #Basmala
          user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
          if fun.quit(user_input): break
       elif user==False and fun.iswin5(active_user,board5):
