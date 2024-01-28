@@ -128,7 +128,7 @@ if gridsize=="1":
             fun.scoresleaderboard(score1,score2,username1,username2)
            elif elapsed_time>30:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2)   
+            fun.scoresleaderboard(score1,score2,username1,username2)   
            user=True
            user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
            if fun.quit(user_input): break
@@ -233,11 +233,11 @@ if gridsize=="2":
           if elapsed_time <= 60:
              score2+=150
              print(f"Your score is {score2}")
-             fun.scoresleaderboard(score1,score2)
+             fun.scoresleaderboard(score1,score2,username1,username2)
              print(f"{username2} won!")
           elif elapsed_time>60:
            print("Sadly, you played over the time limit :(")
-           fun.scoresleaderboard(score1,score2)
+           fun.scoresleaderboard(score1,score2,username1,username2)
           user=False 
           user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
           if fun.quit(user_input): break
@@ -326,11 +326,11 @@ if gridsize=="3":
         if elapsed_time <= 90:
             score2+=150 #Basmala
             print(f"Your score is {score2}") #Basmala
-            fun.scoresleaderboard(score1,score2) #Basmala
+            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
             print(f"{username2} won!")
         elif elapsed_time>90:
             print("Sadly, you played over the time limit :(")
-            fun.scoresleaderboard(score1,score2) #Basmala
+            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
         user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
         if fun.quit(user_input): break
 
