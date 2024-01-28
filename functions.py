@@ -34,11 +34,21 @@ def scoresleaderboard(score1,score2,username1,username2):
     print("Highscore Leaderboard")
     print(f"1. {username1} {score1}")
     print(f"2. {username2} {score2}")
+    f = open("highscores.txt", "a")
+    f.write(f"1.{username1} {score1}\n")
+    f.write(f"2. {username2} {score2}\n")
+    f.close()
+
   
   elif score2>score1:
     print(" Highscore Leaderboard")
-    print(f"1. {username1} {score1}")
-    print(f"2. {username2} {score2}")
+    print(f"1. {username2} {score2}")
+    print(f"2. {username1} {score1}")
+    f = open("highscores.txt", "a")
+    f.write(f"1.{username2} {score2}\n")
+    f.write(f"2. {username1} {score1}\n")
+    f.close()
+
 
 
 def istaken(coords,board):
