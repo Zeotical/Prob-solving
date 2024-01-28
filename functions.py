@@ -70,6 +70,7 @@ def bounds (user_input,gridsize): #Alternated based on tutorial
           return False
       else: return True
 
+
 def scoresleaderboard(score1,score2,username1,username2): #Basmala
   if score1>score2:
     print("Highscore Leaderboard")
