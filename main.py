@@ -125,7 +125,7 @@ if gridsize=="1":
             print(f"{username1} won!")
             score1+=150
             print(f"Your score is {score1}")
-            fun.scoresleaderboard(score1,score2)
+            fun.scoresleaderboard(score1,score2,username1,username2)
            elif elapsed_time>30:
             print("Sadly, you played over the time limit :(")
             fun.scoresleaderboard(score1,score2)   
