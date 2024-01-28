@@ -10,7 +10,7 @@
 # *********************************************************
 
 #NOTE code which doesn't have a hastag with a member's name is from the tutorial or was alternated 
-#based on the tutorial,tutorial was followed by Basmala.
+#based on the tutorial ,tutorial was followed by Basmala.
 
 
 
