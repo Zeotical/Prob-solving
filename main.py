@@ -43,11 +43,11 @@ score2=0 #Basmala
 choice= input("Do you want to play against another player or the computer? ").lower() #Basmala
 
 
-if choice=="computer":
+if choice=="computer":#Haifa
    username1 = input("Player 1 Enter your username:" )
    print ("Hello "+username1)
    username2="computer"	
-elif choice=="player":
+elif choice=="player":#Haifa
    username1 = input("Player 1 Enter your username:" )
    print ("Hello "+username1)
    username2 = input("Player 2 Enter your username:" )
@@ -122,7 +122,7 @@ if gridsize=="1":
            user=username1 
            elapsed_time = time.time() - starttime
            if elapsed_time <= 30:
-            print(f"{username1} won!")
+            print(f"{username1} won!")#Haifa
             score1+=150 #Basmala
             print(f"Your score is {score1}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
@@ -139,7 +139,7 @@ if gridsize=="1":
           user=username2
           elapsed_time = time.time() - starttime
           if elapsed_time <= 30:
-            print(f"{username2} won!")
+            print(f"{username2} won!")#Haifa
             score2+=150 #Basmala
             print(f"Your score is {score2}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
@@ -215,9 +215,9 @@ if gridsize=="2":
            elapsed_time = time.time() - starttime
            if elapsed_time <= 60:
             score1+=150 #Basmala
+            print(f"{username1} won!")#Haifa
             print(f"Your score is {score1}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
-            print(f"{username1} won!")
            elif elapsed_time>60:
             print("Sadly, you played over the time limit :(")
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
@@ -232,9 +232,9 @@ if gridsize=="2":
           elapsed_time= time.time() - starttime
           if elapsed_time <= 60:
              score2+=150 #Basmala
+             print(f"{username2} won!")#Haifa
              print(f"Your score is {score2}") #Basmala
              fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
-             print(f"{username2} won!")
           elif elapsed_time>60:
            print("Sadly, you played over the time limit :(")
            fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
@@ -309,9 +309,9 @@ if gridsize=="3":
          elapsed_time = time.time() - starttime
          if elapsed_time <= 90:
             score1+=150
+            print(f"{username1} won!")#Haifa
             print(f"Your score is {score1}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
-            print(f"{username1} won!")
          elif elapsed_time>90:
             print("Sadly, you played over the time limit :(")
             fun.scoresleaderboard(score1,score2,username1,username2)  #Basmala
@@ -325,9 +325,9 @@ if gridsize=="3":
         elapsed_time = time.time() - starttime
         if elapsed_time <= 90:
             score2+=150 #Basmala
+            print(f"{username2} won!")#Haifa
             print(f"Your score is {score2}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
-            print(f"{username2} won!")
         elif elapsed_time>90:
             print("Sadly, you played over the time limit :(")
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
