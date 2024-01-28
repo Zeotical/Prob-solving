@@ -91,13 +91,13 @@ def scoresleaderboard(score1,score2,username1,username2): #Basmala
 
 def computer(gridsize): #Basmala
    if gridsize== "1":
-      user_input= random.randint(1,10)
+      user_input= random.randint(1,9)
       return user_input
    elif gridsize== "2":
-      user_input= random.randint(1,17)
+      user_input= random.randint(1,16)
       return user_input
    elif gridsize=="3":
-      user_input= random.randint(1,26)
+      user_input= random.randint(1,25)
       return user_input
 
 def startagain(user_input,gridsize): #Basmala
