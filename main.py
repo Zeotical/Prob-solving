@@ -359,7 +359,7 @@ if gridsize=="3":
         if fun.quit(user_input): break
 
         turns+=1
-        if turns==25:
+      if turns==25:
           print()
           fun.print_board(board5)
           print()
