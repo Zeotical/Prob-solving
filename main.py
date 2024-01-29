@@ -276,7 +276,7 @@ board5=[
    ["-","-","-","-","-"],
    ["-","-","-","-","-"]
 ]
-
+turns=0
 if gridsize=="3":
     starttime=time.time()
     while True:
@@ -313,7 +313,7 @@ if gridsize=="3":
            user_input= str(fun.computer(gridsize)) #Basmala
            print(f"The computer enters: {user_input}") #Basmala
       else:
-          user_input=input("Please enter a position 1 through 9 or press \"q\" to quit: ").lower()  
+          user_input=input("Please enter a position 1 through 25 or press \"q\" to quit: ").lower()  
       if fun.quit(user_input): break
       if not fun.check_input(user_input,gridsize):
           print("Please try again.")
@@ -359,7 +359,7 @@ if gridsize=="3":
         if fun.quit(user_input): break
 
         turns+=1
-        if turns==25:
+    if turns==25:
           print()
           fun.print_board(board5)
           print()
