@@ -136,7 +136,7 @@ if gridsize=="1":
            if elapsed_time <= 30:
             print(f"{username1} won!")#Haifa
             score1+=150 #Basmala
-            print(f"Your score is {score1}") #Basmala
+            print(f"{username1}'s score is {score1}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
            elif elapsed_time>30:
             print("Sadly, you played over the time limit :(")
@@ -153,7 +153,7 @@ if gridsize=="1":
           if elapsed_time <= 30:
             print(f"{username2} won!")#Haifa
             score2+=150 #Basmala
-            print(f"Your score is {score2}") #Basmala
+            print(f"{username2}'s score is {score2}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
           elif elapsed_time>30:
             print("Sadly, you played over the time limit :(")
