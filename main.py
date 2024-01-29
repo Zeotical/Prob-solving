@@ -358,8 +358,8 @@ if gridsize=="3":
         user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
         if fun.quit(user_input): break
 
-        turns+=1
-    if turns==25:
+      turns+=1
+      if turns==25:
           print()
           fun.print_board(board5)
           print()
