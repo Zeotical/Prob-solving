@@ -34,7 +34,11 @@
 
 import time, functions  as fun
 
+print()
 print("Welcome to another generic x-o game!")
+print()
+print("Time limits for gridsizes: 3x3 (30 secs), 4x4(60secs) and 5x5(90secs).")
+print()
 
 user_input="#" #Basmala
 score1=0 #Basmala
@@ -59,15 +63,15 @@ elif choice=="player":#Haifa
    username2 = input("Player 2 Enter your username:" )
    print ("Hello "+username2)
 
-while True:
+while True:#Dina
     print("Choose a grid size!")
     print("1. small (3x3)")
     print("2. medium (4x4)")
     print("3. big (5x5)")
     gridsize = input("Enter your choice (1, 2, or 3): ")
-    if gridsize in ["1", "2", "3"]:
+    if gridsize in ["1", "2", "3"]:#Dina
         break
-    else:
+    else:#Dina
         print("Invalid choice. Please enter 1, 2, or 3")
 
 
@@ -82,9 +86,9 @@ board= [
       ["-", "-","-"]]
 turns= 0
 if gridsize=="1":
-    starttime=time.time()
+    starttime=time.time()#Dina
     while True:
-        starttime=time.time()
+        starttime=time.time()#Dina
         if user_input=="s": #Basmala
              turns=0 #Basmala
              starttime=time.time()
@@ -132,14 +136,14 @@ if gridsize=="1":
            fun.print_board(board) #Haifa
            print() #Haifa
            user=username1 
-           elapsed_time = time.time() - starttime
-           if elapsed_time <= 30:
+           elapsed_time = time.time() - starttime #Dina
+           if elapsed_time <= 30: #Dina
             print(f"{username1} won!")#Haifa
             score1+=150 #Basmala
             print(f"{username1}'s score is {score1}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
-           elif elapsed_time>30:
-            print("Sadly, you played over the time limit :(")
+           elif elapsed_time>30: #Dina
+            print("Sadly, you played over the time limit :(") #Dina
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
            user=True
            user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
@@ -149,14 +153,14 @@ if gridsize=="1":
           fun.print_board(board)
           print()
           user=username2
-          elapsed_time = time.time() - starttime
-          if elapsed_time <= 30:
+          elapsed_time = time.time() - starttime #Dina
+          if elapsed_time <= 30: #Dina
             print(f"{username2} won!")#Haifa
             score2+=150 #Basmala
             print(f"{username2}'s score is {score2}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
-          elif elapsed_time>30:
-            print("Sadly, you played over the time limit :(")
+          elif elapsed_time>30: #Dina
+            print("Sadly, you played over the time limit :(") #Dina
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
           user=False
           user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
@@ -180,11 +184,11 @@ board4= [
 
 turns=0
 if gridsize=="2":
-    starttime=time.time()
+    starttime=time.time() #Dina
     while True:
         if user_input=="s": #Basmala
              turns=0 #Basmala
-             starttime=time.time()
+             starttime=time.time() #Dina
              fun.startagain(user_input,gridsize) #Basmala
              choice= input("Do you want to play against another player or the computer? ").lower() #Basmala
              while True:
@@ -230,14 +234,14 @@ if gridsize=="2":
            fun.print_board(board4) #Haifa
            print() #Haifa
            user=username1 
-           elapsed_time = time.time() - starttime
-           if elapsed_time <= 60:
+           elapsed_time = time.time() - starttime #Dina
+           if elapsed_time <= 60: #Dina
             score1+=150 #Basmala
             print(f"{username1} won!")#Haifa
-            print(f"Your score is {score1}") #Basmala
+            print(f"{username1}'s score is {score1}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
            elif elapsed_time>60:
-            print("Sadly, you played over the time limit :(")
+            print("Sadly, you played over the time limit :(") #Dina
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
            user=True 
            user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
@@ -247,11 +251,11 @@ if gridsize=="2":
           fun.print_board(board4)
           print()
           user=username2
-          elapsed_time= time.time() - starttime
-          if elapsed_time <= 60:
+          elapsed_time= time.time() - starttime #Dina
+          if elapsed_time <= 60: #Dina
              score2+=150 #Basmala
              print(f"{username2} won!")#Haifa
-             print(f"Your score is {score2}") #Basmala
+             print(f"{username2}'s score is {score2}") #Basmala
              fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
           elif elapsed_time>60:
            print("Sadly, you played over the time limit :(")
@@ -278,11 +282,11 @@ board5=[
 ]
 turns=0
 if gridsize=="3":
-    starttime=time.time()
+    starttime=time.time() #Dina
     while True:
       if user_input=="s":
            turns=0
-           starttime=time.time()
+           starttime=time.time() #Dina
            fun.startagain(user_input,gridsize) #Basmala
            choice= input("Do you want to play against another player or the computer? ").lower() #Basmala
            while True:
@@ -330,14 +334,14 @@ if gridsize=="3":
          fun.print_board(board5) #Haifa
          print() #Haifa
          user=username1 
-         elapsed_time = time.time() - starttime
-         if elapsed_time <= 90:
+         elapsed_time = time.time() - starttime#Dina
+         if elapsed_time <= 90:#Dina
             score1+=150
             print(f"{username1} won!")#Haifa
-            print(f"Your score is {score1}") #Basmala
+            print(f"{username1}'s score is {score1}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
-         elif elapsed_time>90:
-            print("Sadly, you played over the time limit :(")
+         elif elapsed_time>90: #Dina
+            print("Sadly, you played over the time limit :(") #Dina
             fun.scoresleaderboard(score1,score2,username1,username2)  #Basmala
          user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
          if fun.quit(user_input): break
@@ -346,14 +350,14 @@ if gridsize=="3":
         fun.print_board(board5)
         print()
         user=username2
-        elapsed_time = time.time() - starttime
-        if elapsed_time <= 90:
+        elapsed_time = time.time() - starttime #Dina
+        if elapsed_time <= 90: #Dina
             score2+=150 #Basmala
             print(f"{username2} won!")#Haifa
-            print(f"Your score is {score2}") #Basmala
+            print(f"{username2}'s score is {score2}") #Basmala
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
-        elif elapsed_time>90:
-            print("Sadly, you played over the time limit :(")
+        elif elapsed_time>90: #Dina
+            print("Sadly, you played over the time limit :(") #Dina
             fun.scoresleaderboard(score1,score2,username1,username2) #Basmala
         user_input=input("To play again enter \"s\", to quit enter \"q\": ").lower() 
         if fun.quit(user_input): break
